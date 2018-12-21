@@ -29,4 +29,4 @@ def flajolet_martin(data, k):
         bucket = h & (total_buckets - 1) #Finds the bucket where the number of ending zero's are appended 
         bucket_hash = h >> k #move the bits of the hash to the right to use the binary digits without the bucket digits 
         total_zeroes[bucket] = max(total_zeroes[bucket], zero_counter(bucket_hash))
-    return math.ceiling(2 ** (float(sum(total_zeroes)) / total_buckets) * total_buckets * 0.79402)
+    return math.ceil(2 ** (float(sum(total_zeroes)) / total_buckets) * total_buckets * 0.79402)
